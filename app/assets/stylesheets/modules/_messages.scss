@@ -1,7 +1,10 @@
 * {
   box-sizing: border-box;
 }
-
+a {
+  color: white;
+  // text-decoration: none;
+}
 .side-bar {
   float: left;
   height: 100vh;
@@ -19,6 +22,7 @@
       width: 100%;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       &__user-name {
         font-size: 16px;
         font-weight: bold;
@@ -133,12 +137,15 @@
           height: 50px;
           width: 100%;
           padding: 0 45px 0 15px;
-          .form-image {
-            height: 50px;
-            position: absolute;
-            right: 10px;
-            line-height: 50px;
-            font-size: 25px;
+        }
+        .form-image {
+          height: 50px;
+          position: absolute;
+          right: 10px;
+          line-height: 50px;
+          font-size: 25px;
+          .Hidden {
+            display: none;
           }
         }
       }

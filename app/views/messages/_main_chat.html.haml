@@ -2,27 +2,38 @@
   .header
     .header__group
       .header__group__user-name
-        a
+        = @group.name
       .header__group__member-lists
         Member:
         .header__group__member-lists__name
-          yano
-    .edit-btn
-      Edit
+          - @group.users.each do |user|
+            = user.name
+    = link_to edit_group_path(@group) do
+      .edit-btn
+        Edit
   .messages
-    .message
-      .message__top
-        .message__top__username
-          yano
-        .message__top__date
-          2020年05月07日 22時20分
-      .message__bottom
-        ハローワーク
+    = render @messages
   .footer
-    .form 
+    = form_with model: [@group, @message], html: {class: "form"}, local: true do |f|
       .form__contents
-        .form__contents__input
-          %label.form-image
-            = icon("fas", "image")
-      %submit.form-submit
-        Send
+        = f.text_field :content, class: "form__contents__input", placeholder: "Type a message"
+        = f.label :image, class: "form-image" do
+          = icon("fas", "image")
+          = f.file_field :image, class: 'Hidden'
+      = f.submit 'Send', class: 'form-submit'
+
+    -# = form_for [@group, @message] do |f|
+    -#   = f.text_field :content, class: "input-box__text", placeholder: "Type a message"
+    -#   = f.label :image, class: "input-box__image" do
+    -#     = icon("fas", "image")
+    -#     = f.file_field :image, class: "input-box__image__file"
+    -#   = f.submit "submit", class: "send-btn"
+
+
+      -# .form 
+      -#   .form__contents
+      -#     .form__contents__input
+      -#       %label.form-image
+      -#         = icon("fas", "image")
+      -#   %submit.form-submit
+      -#     Send
