@@ -48,3 +48,6 @@
 
 - belongs_to :user
 - belongs_to :group
+
+間違えてマスターで操作して、コミットプッシュした
+プルリク作れない
