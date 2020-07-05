@@ -3,7 +3,7 @@
 }
 a {
   color: white;
-  // text-decoration: none;
+  text-decoration: none;
 }
 .side-bar {
   float: left;
@@ -151,13 +151,22 @@ a {
       }
       .form-submit {
         background-color: #38aef0;
-        border: none;
-        color: #fff;
+        // border: none;
+        // color: #fff;
         font-size: 16px;
         height: 50px;
         margin-left: 15px;
         padding: 0 30px;
         line-height: 50px;
+        color: #fff; /* 文字色を白にする */
+        // background-color: #3a3a3a; /* 背景色をグレー（#3a3a3a）にする */
+        border: 2px solid #000; /* 要素の枠を2pxの太さで、線の種類をsolidに、色を黒にする */
+        text-decoration: none;
+      }
+      .form-submit:hover {
+        color: #000; /* 文字色を白にする */
+        background-color: #c9c9c9; /* 背景色をグレー（#c9c9c9）にする */
+        text-decoration: none;
       }
     }
   }
